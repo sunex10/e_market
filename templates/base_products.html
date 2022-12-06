@@ -1,0 +1,20 @@
+{% extends 'base_main.html' %}
+
+{% load static %}
+
+{% block main %}
+<div class="container">
+    <div class="row row-cols-3">
+        {% for product in products %}
+        <div class="card ms-2 mt-2 align-self-start">
+            <img src="{{ product.product_image }}" alt="{{ product.product_name }}" height="10%"/>  
+            <div class="card-body">
+                <h5 class="card-title">{{ product.product_name }}</h5>
+                <h6 class="">{{ product.product_price }}</h6>
+                <a href="{% url 'details' product.id %}" class="btn btn-primary">Add To Cart</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

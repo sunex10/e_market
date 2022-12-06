@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="sidenav">
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'product' %}">Product</a>
+    <a href="{% url 'information' %}">Info</a>
+    <a href="{% url 'contacts'  %}">Contact</a>
+    <button class="dropdown-btn">MORE OPTIONS
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-container">
+        <a href="{% url 'latest_phone' %}">latest_phone</a>
+        <a href="{% url 'Uk_used_phones' %}">Uk_used_phones</a>
+
+        <a href="#">Smart technologies</a>
+    </div>
+</div>
+<div class="main">
+   {% block main %}
+
+   {% endblock %}
+</div>
+{% endblock %}
